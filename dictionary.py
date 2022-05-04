@@ -1,6 +1,6 @@
 from re import match as rematch
 
-with open('dictionary.txt') as f:
+with open('lists/dictionary.txt') as f:
     words = f.read().splitlines()[2:]
 
 def match(pattern, guess):
