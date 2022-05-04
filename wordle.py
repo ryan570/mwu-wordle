@@ -2,8 +2,7 @@ from collections import Counter
 
 # test the guess feedback for edge cases, I have not tested this very thoroughly but I think it might be right
 class Wordle:
-    def __init__(self, word):
-        self.word = word
+    def __init__(self):
         self.guesses = 0
         self.solved = False
 
