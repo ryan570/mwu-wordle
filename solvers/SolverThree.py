@@ -1,5 +1,7 @@
-from dictionary import words, match
 import random
+
+from dictionary import match, words
+
 
 class SolverThree:
     """

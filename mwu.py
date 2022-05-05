@@ -1,6 +1,7 @@
-import numpy as np
-import math
 import csv
+import math
+
+import numpy as np
 
 # Number of algorithms/experts
 N = 3
@@ -21,11 +22,9 @@ with open('guesses.csv', newline='') as csvfile:
 	csv_reader = csv.reader(csvfile, delimiter=',')
 
 	for row in csv_reader:
-		guess_counts[0].append(int(row[0]))
-		guess_counts[1].append(int(row[1]))
-		guess_counts[2].append(int(row[2]))
-		# guess_counts[3].append(int(row[3]))
-		# guess_counts[4].append(int(row[4]))
+		for n in range(N):
+			guess_counts[n].append(int(row[n]))
+			
 
 # MWU algorithm
 for t in range(T):

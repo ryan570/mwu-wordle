@@ -1,9 +1,10 @@
-from wordle import Wordle
+import csv
+
 from dictionary import words
 from solvers.SolverOne import SolverOne
-from solvers.SolverTwo import SolverTwo
 from solvers.SolverThree import SolverThree
-import csv
+from solvers.SolverTwo import SolverTwo
+from wordle import Wordle
 
 # Number of algorithms/experts
 N = 3
@@ -25,7 +26,7 @@ for t in range(T):
         while not game.solved:
             guess = solvers[n].guess()
             feedback = game.guess(guess)
-            # print(guess, feedback)
+
             solvers[n].inform(feedback)
         
         guess_counts[t].append(game.guesses)

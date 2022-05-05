@@ -5,7 +5,6 @@ with open('lists/answers.txt') as f:
 
 def match(pattern, guess):
     """Matches a particular pattern with a guess to cut down on 'words' list."""
-    # exact = [letter if pattern[i] == 2 else '.' for i, letter in enumerate(guess)]
     contains = [letter for i, letter in enumerate(guess) if pattern[i] == 1]
     block = [letter for i, letter in enumerate(guess) if pattern[i] == 0]
 
@@ -24,5 +23,3 @@ def match(pattern, guess):
 
     test = list(filter(lambda m: rematch(p, m), words))
     return set(test)
-
-# print(match([0, 1, 0, 0, 0], 'salet') & match([0, 0, 1, 0, 1], 'curio') & match([2, 1, 0, 1, 0], 'arbor'))
