@@ -1,14 +1,15 @@
 import csv
 import math
-from statistics import mean, variance
+from statistics import mean
+from statistics import variance
 
 import numpy as np
 
 # Number of algorithms/experts
-N = 6
+N = 5
 
 # Number of words to run through
-T = 2309
+T = 1000
 
 # Initialize hyperparamters
 epsilon = math.sqrt(math.log(N) / T) 

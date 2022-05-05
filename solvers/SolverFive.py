@@ -1,4 +1,4 @@
-from dictionary import answers, match
+from dictionary import words, match
 import random
 
 # ALL ALGOS NEED TO FOLLOW THIS INTERFACE
@@ -21,7 +21,7 @@ class SolverFive:
         self.curr_guess = 0
 
         self.info = {} # (key, value) => ("guess", [0, 1, 2, 1, 0])
-        self.possible_guesses = set(answers)
+        self.possible_guesses = set(words)
 
     def guess(self):
         # print(self.guesses)
@@ -41,4 +41,4 @@ class SolverFive:
         self.curr_guess = 0
         self.info.clear()
         self.guesses.clear()
-        self.possible_guesses = set(answers)
+        self.possible_guesses = set(words)

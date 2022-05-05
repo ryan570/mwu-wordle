@@ -1,6 +1,6 @@
 import random
 
-from dictionary import match, answers
+from dictionary import match, words
 
 
 class SolverTwo:
@@ -22,7 +22,7 @@ class SolverTwo:
         self.curr_guess = 0
 
         self.info = {} 
-        self.possible_guesses = set(answers)
+        self.possible_guesses = set(words)
 
     def guess(self):
         """Handles a guess."""
@@ -46,4 +46,4 @@ class SolverTwo:
         self.guesses.clear()
         self.curr_guess = 0
         self.info.clear()
-        self.possible_guesses = set(answers)
+        self.possible_guesses = set(words)
