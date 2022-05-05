@@ -1,10 +1,12 @@
 import csv
 import math
+from statistics import mean
+from statistics import variance
 
 import numpy as np
 
 # Number of algorithms/experts
-N = 3
+N = 5
 
 # Number of words to run through
 T = 1000
@@ -41,4 +43,12 @@ for t in range(T):
 	weights[chosen] = weights[chosen] * (1 - epsilon * ((outcome - 3.92) / rho))   
 
 # Final weights
-print(weights)
+means = [0]*N
+variances = [0]*N
+for n in range(N):
+	means[n] = mean(guess_counts[n])
+	variances[n] = variance(guess_counts[n])
+
+print("mean guesses: ", means)
+print("variance: ", variances)
+print("weights: ", weights)

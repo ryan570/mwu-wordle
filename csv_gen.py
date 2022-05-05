@@ -4,25 +4,26 @@ from dictionary import words
 from solvers.SolverOne import SolverOne
 from solvers.SolverThree import SolverThree
 from solvers.SolverTwo import SolverTwo
+from solvers.SolverFour import SolverFour
+from solvers.SolverFive import SolverFive
 from wordle import Wordle
 
 # Number of algorithms/experts
-N = 3
+N = 5
 
 # Number of words to run through
 T = 1000
 
 # Initialize new game, algorithms, as well as guess counts for each algorithm
 game = Wordle()
-solvers = [SolverOne(), SolverTwo(), SolverThree()]
+solvers = [SolverOne(), SolverTwo(), SolverThree(), SolverFour(), SolverFive()]
 guess_counts = [[] for _ in range(T)]
 
 # Generate data for csv file
 for t in range(T):
     for n in range(N):
         game.reset(words[t])
-        if t % 20 == 0:
-            print(t, game.word)
+        print(t, game.word)
 
         while not game.solved:
             guess = solvers[n].guess()

@@ -2,10 +2,22 @@ from dictionary import words, match
 import random
 
 # ALL ALGOS NEED TO FOLLOW THIS INTERFACE
-class five:
+class SolverFive:
+    """
+    Algorithm 5:
+    Starting word combo: "adieu"
+
+    Covers 4 vowels in only one word.
+
+    guesses: An array storing all guesses that have been made
+    first_guesses: An array storing the starting guesses
+    curr_guess: The current guess index
+    info: A dictionary storing all information the algorithm has gathered from the guesses; (key, value) => ("guess", [0, 1, 2, 1, 0])
+    possible_guesses: A set of all possible remaining answers
+    """
     def __init__(self):
         self.guesses = []
-        self.first_guesses = ["glent", "brick", "jumpy", "vozhd", "waqfs"]
+        self.first_guesses = ["adieu"]
         self.curr_guess = 0
 
         self.info = {} # (key, value) => ("guess", [0, 1, 2, 1, 0])
