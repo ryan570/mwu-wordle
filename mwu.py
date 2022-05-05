@@ -29,16 +29,16 @@ with open('guesses.csv', newline='') as csvfile:
 # MWU algorithm
 for t in range(T):
 	# Generate probabilities of choosing each algorithm
-    probs = [w / sum(weights) for w in weights]
+	probs = [w / sum(weights) for w in weights]
 
 	# Randomly choose an algorithm according to distribution
-    chosen = np.random.choice(N, p=probs)
+	chosen = np.random.choice(N, p=probs)
 
 	# Record chosen guess count from chosen algorithm
-    outcome = guess_counts[chosen][t]
+	outcome = guess_counts[chosen][t]
 
 	# Update weights
-    weights[chosen] = weights[chosen] * (1 - epsilon * ((outcome - 3.92) / rho))   
+	weights[chosen] = weights[chosen] * (1 - epsilon * ((outcome - 3.92) / rho))   
 
 # Final weights
 print(weights)
