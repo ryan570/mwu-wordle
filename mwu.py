@@ -1,9 +1,11 @@
 import numpy as np
 import math
 import csv
+from statistics import mean
+from statistics import variance
 
 T = 1000
-N = 3
+N = 5
 
 epsilon = math.sqrt(math.log(N) / T)
 rho = 5 # ?
@@ -17,14 +19,22 @@ with open('guesses.csv', newline='') as csvfile:
 		guess_counts[0].append(int(row[0]))
 		guess_counts[1].append(int(row[1]))
 		guess_counts[2].append(int(row[2]))
-		# guess_counts[3].append(int(row[3]))
-		# guess_counts[4].append(int(row[4]))
+		guess_counts[3].append(int(row[3]))
+		guess_counts[4].append(int(row[4]))
 
 for t in range(T):
     probs = [w / sum(weights) for w in weights]
     chosen = np.random.choice(N, p=probs)
 
     outcome = guess_counts[chosen][t]
-    weights[chosen] = weights[chosen] * (1 - epsilon * ((outcome - 3.92) / rho))   
+    weights[chosen] = weights[chosen] * (1 - epsilon * ((outcome - 3.92) / rho))  
 
-print(weights)
+means = [0]*N
+variances = [0]*N
+for n in range(N):
+	means[n] = mean(guess_counts[n])
+	variances[n] = variance(guess_counts[n])
+
+print("mean guesses: ", means)
+print("variance: ", variances)
+print("weights: ", weights)

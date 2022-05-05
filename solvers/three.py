@@ -5,7 +5,7 @@ import random
 class three:
     def __init__(self):
         self.guesses = []
-        self.first_guesses = ["glent", "brick", "jumpy", "vozhd", "waqfs"]
+        self.first_guesses = ["adieu"]
         self.curr_guess = 0
 
         self.info = {} # (key, value) => ("guess", [0, 1, 2, 1, 0])
