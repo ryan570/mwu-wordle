@@ -6,7 +6,7 @@ from statistics import variance
 import numpy as np
 
 # Number of algorithms/experts
-N = 5
+N = 6
 
 # Number of words to run through
 T = 1000
