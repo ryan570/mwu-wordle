@@ -1,6 +1,6 @@
 import random
 
-from dictionary import match, words
+from dictionary import match, answers
 
 
 class SolverThree:
@@ -22,7 +22,7 @@ class SolverThree:
         self.curr_guess = 0
 
         self.info = {}
-        self.possible_guesses = set(words)
+        self.possible_guesses = set(answers)
 
     def guess(self):
         """Handles a guess."""
@@ -46,4 +46,4 @@ class SolverThree:
         self.guesses.clear()
         self.curr_guess = 0
         self.info.clear()
-        self.possible_guesses = set(words)
+        self.possible_guesses = set(answers)

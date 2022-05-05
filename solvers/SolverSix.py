@@ -2,12 +2,14 @@ from dictionary import answers, match
 import random
 
 # ALL ALGOS NEED TO FOLLOW THIS INTERFACE
-class SolverFour:
+class SolverSix:
     """
     Algorithm 4:
     Starting word combo: "salet" + "curio"
 
     Covers all vowels (a,e,i,o,u) as well as common consonants (s,l,t,c,r).
+
+    Prevents duplicate guesses
 
     guesses: An array storing all guesses that have been made
     first_guesses: An array storing the starting guesses
@@ -27,14 +29,17 @@ class SolverFour:
         # print(self.guesses)
         if self.curr_guess < len(self.first_guesses):
             self.guesses.append(self.first_guesses[self.curr_guess])
-            self.curr_guess += 1
             return self.guesses[-1]
         
-        self.curr_guess += 1
-        self.guesses.append(random.choice(tuple(self.possible_guesses)))
+        choice = random.choice(tuple(self.possible_guesses))
+        while choice in self.guesses:
+            choice = random.choice(tuple(self.possible_guesses))
+
+        self.guesses.append(choice)
         return self.guesses[-1]
 
     def inform(self, feedback):
+        self.curr_guess += 1
         self.possible_guesses &= match(feedback, self.guesses[-1])
 
     def reset(self):

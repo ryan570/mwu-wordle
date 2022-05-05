@@ -1,10 +1,17 @@
 from re import match as rematch
 
-# Retrieve word list
+# Retrieve answers list
 with open('lists/answers.txt') as f:
+    answers = f.read().splitlines()[2:]
+
+# Retrieve word list
+with open('lists/dictionary.txt') as f:
     words = f.read().splitlines()[2:]
 
-def match(pattern, guess):
+letters = set(chr(c + 97) for c in range(26))
+
+
+def match(pattern, guess, all=False):
     """Matches a particular pattern with a guess to cut down on 'words' list."""
     # Handle correct letter in wrong position (yellow)
     contains = [letter for i, letter in enumerate(guess) if pattern[i] == 1]
@@ -27,5 +34,5 @@ def match(pattern, guess):
             p += '.'
 
     # Pattern matching to find remaining possible words
-    remaining = list(filter(lambda m: rematch(p, m), words))
+    remaining = list(filter(lambda m: rematch(p, m), words if all else answers))
     return set(remaining)
