@@ -6,9 +6,9 @@ from dictionary import match, words
 class SolverOne:
     """
     Algorithm 1:
-    Starting word: "crane"
+    Starting word: none
 
-    Originally proposed by 3Blue1Brown as the "best opener."
+    Random starting word, good for a baseline of comparison for other algorithms. 
 
     guesses: An array storing all guesses that have been made
     first_guesses: An array storing the starting guesses
@@ -18,7 +18,7 @@ class SolverOne:
     """
     def __init__(self):
         self.guesses = []
-        self.first_guesses = ["crane"]
+        self.first_guesses = []
         self.curr_guess = 0
         self.info = {}
         self.possible_guesses = set(words)

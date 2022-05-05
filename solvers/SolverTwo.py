@@ -6,9 +6,9 @@ from dictionary import match, words
 class SolverTwo:
     """
     Algorithm 2:
-    Starting word combo: "salet" + "curio"
+    Starting word combo: "adieu"
 
-    Covers all vowels (a,e,i,o,u) as well as common consonants (s,l,t,c,r).
+    Covers 4 common vowels with only one word.
 
     guesses: An array storing all guesses that have been made
     first_guesses: An array storing the starting guesses
@@ -18,7 +18,7 @@ class SolverTwo:
     """
     def __init__(self):
         self.guesses = []
-        self.first_guesses = ["salet", "curio"]
+        self.first_guesses = ["adieu"]
         self.curr_guess = 0
 
         self.info = {} 

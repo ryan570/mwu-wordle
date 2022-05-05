@@ -6,9 +6,9 @@ from dictionary import match, words
 class SolverThree:
     """
     Algorithm 3:
-    Starting word combo: "glent" + "brick" + "jumpy" + "vozhd" + "waqfs"
+    Starting word combo: "crane"
 
-    Covers 25 letters of the English alphabet (everything except x, one of the rarer letters).
+     Originally proposed by 3Blue1Brown as the "best opener."
 
     guesses: An array storing all guesses that have been made
     first_guesses: An array storing the starting guesses
@@ -18,7 +18,7 @@ class SolverThree:
     """
     def __init__(self):
         self.guesses = []
-        self.first_guesses = ["glent", "brick", "jumpy", "vozhd", "waqfs"]
+        self.first_guesses = ["crane"]
         self.curr_guess = 0
 
         self.info = {}

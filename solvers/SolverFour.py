@@ -5,9 +5,9 @@ import random
 class SolverFour:
     """
     Algorithm 4:
-    Starting word combo: none
+    Starting word combo: "salet" + "curio"
 
-    Random starting word, good for a baseline of comparison for other algorithms.
+    Covers all vowels (a,e,i,o,u) as well as common consonants (s,l,t,c,r).
 
     guesses: An array storing all guesses that have been made
     first_guesses: An array storing the starting guesses
@@ -17,7 +17,7 @@ class SolverFour:
     """
     def __init__(self):
         self.guesses = []
-        self.first_guesses = []
+        self.first_guesses = ["salet", "curio"]
         self.curr_guess = 0
 
         self.info = {} # (key, value) => ("guess", [0, 1, 2, 1, 0])

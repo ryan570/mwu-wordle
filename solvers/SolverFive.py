@@ -5,9 +5,9 @@ import random
 class SolverFive:
     """
     Algorithm 5:
-    Starting word combo: "adieu"
+    Starting word combo: "glent" + "brick" + "jumpy" + "vozhd" + "waqfs"
 
-    Covers 4 vowels in only one word.
+    Covers 25 letters of the English alphabet (everything except x, one of the rarer letters).
 
     guesses: An array storing all guesses that have been made
     first_guesses: An array storing the starting guesses
@@ -17,7 +17,7 @@ class SolverFive:
     """
     def __init__(self):
         self.guesses = []
-        self.first_guesses = ["adieu"]
+        self.first_guesses = ["glent", "brick", "jumpy", "vozhd", "waqfs"]
         self.curr_guess = 0
 
         self.info = {} # (key, value) => ("guess", [0, 1, 2, 1, 0])
