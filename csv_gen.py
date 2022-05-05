@@ -3,13 +3,14 @@ from wordle import Wordle
 from dictionary import words
 from solvers.one import one
 from solvers.two import two
+from solvers.three import three
 import numpy as np
 
-N = 2
+N = 3
 T = 1000
 
 game = Wordle()
-solvers = [one(), two()]
+solvers = [one(), two(), three()]
 guess_counts = [[] for _ in range(T)]
 
 for t in range(T):

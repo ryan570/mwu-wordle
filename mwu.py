@@ -3,7 +3,7 @@ import math
 import csv
 
 T = 1000
-N = 2
+N = 3
 
 epsilon = math.sqrt(math.log(N) / T)
 rho = 5 # ?
@@ -16,7 +16,7 @@ with open('guesses.csv', newline='') as csvfile:
 	for row in csv_reader:
 		guess_counts[0].append(int(row[0]))
 		guess_counts[1].append(int(row[1]))
-		# guess_counts[2].append(int(row[2]))
+		guess_counts[2].append(int(row[2]))
 		# guess_counts[3].append(int(row[3]))
 		# guess_counts[4].append(int(row[4]))
 
