@@ -14,7 +14,7 @@ from wordle import Wordle
 N = 7
 
 # Number of words to run through
-T = 1000
+T = 100
 
 # Initialize new game, algorithms, as well as guess counts for each algorithm
 game = Wordle()
