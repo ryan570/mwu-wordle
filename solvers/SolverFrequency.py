@@ -3,7 +3,7 @@ from collections import Counter
 import random
 
 # ALL ALGOS NEED TO FOLLOW THIS INTERFACE
-class SolverBrian:
+class SolverFrequency:
     """
     Algorithm 4:
     Next word decision: chooses next word based on using the letters with the highest frequency in the remaining words
