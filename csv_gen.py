@@ -7,17 +7,18 @@ from solvers.SolverTwo import SolverTwo
 from solvers.SolverFour import SolverFour
 from solvers.SolverFive import SolverFive
 from solvers.SolverBrian import SolverBrian
+from solvers.SolverLevenshtein import SolverLevenshtein
 from wordle import Wordle
 
 # Number of algorithms/experts
-N = 6
+N = 7
 
 # Number of words to run through
 T = 1000
 
 # Initialize new game, algorithms, as well as guess counts for each algorithm
 game = Wordle()
-solvers = [SolverOne(), SolverTwo(), SolverThree(), SolverFour(), SolverFive(), SolverBrian()]
+solvers = [SolverOne(), SolverTwo(), SolverThree(), SolverFour(), SolverFive(), SolverBrian(),SolverLevenshtein()]
 guess_counts = [[] for _ in range(T)]
 
 # Generate data for csv file
