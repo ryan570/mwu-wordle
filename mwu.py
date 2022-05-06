@@ -9,7 +9,7 @@ import numpy as np
 N = 7
 
 # Number of words to run through
-T = 100
+T = 1000
 
 # Initialize hyperparamters
 epsilon = math.sqrt(math.log(N) / T) 

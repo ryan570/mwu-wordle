@@ -8,9 +8,10 @@ from dictionary import match, words
 class SolverLevenshtein:
     """
     Algorithm 1:
-    Starting word: none
-
-    Random starting word, good for a baseline of comparison for other algorithms. 
+    Starting word: crane
+    
+    Go through the list of possible valid words and choose the word with the greatest Levenshtein Distance to the previous guess.
+    
 
     guesses: An array storing all guesses that have been made
     first_guesses: An array storing the starting guesses
@@ -34,17 +35,19 @@ class SolverLevenshtein:
             return self.guesses[-1]
         
         self.curr_guess += 1
-        # Randomly choose from possible guesses
+        
         possible = list(self.possible_guesses)
 
         best_word = possible[0]
-        best_word_distance = distance(possible[0],self.guesses[-1])
+        best_word_distance = self.distance_to_all(best_word,self.guesses)
+
+        #Go through each word and pick the word with the greatest distance to the previous guess
         for word in possible:
-            if distance(word,self.guesses[-1]) > best_word_distance:
+            if self.distance_to_all(word,self.guesses) > best_word_distance:
                 best_word = word
-                best_word_distance = distance(word,self.guesses[-1])
+                best_word_distance = self.distance_to_all(word,self.guesses)
         
-        #print(best_word)
+        
         self.guesses.append(best_word)
         return self.guesses[-1]
 
@@ -58,3 +61,10 @@ class SolverLevenshtein:
         self.curr_guess = 0
         self.info.clear()
         self.possible_guesses = set(words)
+
+    def distance_to_all(self,word,guesses):
+        total = 0
+        for guess in guesses:
+            total+=distance(word,guess)
+        return total
+
