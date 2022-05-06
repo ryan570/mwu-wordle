@@ -14,7 +14,7 @@ T = 2309
 
 # Initialize hyperparamters
 epsilon = math.sqrt(math.log(N) / T) 
-rho = 5 # Maximum absolute value of error
+rho = 8 # Maximum absolute value of error
 
 # Initialize weights to 1
 weights = [1] * N
