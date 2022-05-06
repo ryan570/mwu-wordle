@@ -10,7 +10,7 @@ import numpy as np
 N = 8
 
 # Number of words to run through
-T = 1000
+T = 2309
 
 # Initialize hyperparamters
 epsilon = math.sqrt(math.log(N) / T) 
@@ -41,7 +41,7 @@ for t in range(T):
 	outcome = guess_counts[chosen][t]
 
 	# Update weights
-	weights[chosen] = weights[chosen] * (1 - epsilon * ((outcome - 3.5) / rho))   
+	weights[chosen] = weights[chosen] * (1 - epsilon * ((outcome - 4) / rho))   
 
 # Final weights
 means = [0]*N
