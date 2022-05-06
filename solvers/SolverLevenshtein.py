@@ -21,7 +21,7 @@ class SolverLevenshtein:
     """
     def __init__(self):
         self.guesses = []
-        self.first_guesses = ["crane"]
+        self.first_guesses = ["salet","curio"]
         self.curr_guess = 0
         self.info = {}
         self.possible_guesses = set(words)
