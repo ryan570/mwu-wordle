@@ -6,7 +6,7 @@ from Levenshtein import distance
 from dictionary import match, words
 
 
-class SolverLevenBrian:
+class SolverLevenFreq:
     """
     Algorithm 1:
     Starting word: crane
