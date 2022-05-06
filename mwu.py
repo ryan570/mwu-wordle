@@ -5,6 +5,7 @@ from statistics import variance
 
 import numpy as np
 
+
 # Number of algorithms/experts
 N = 8
 
@@ -40,7 +41,7 @@ for t in range(T):
 	outcome = guess_counts[chosen][t]
 
 	# Update weights
-	weights[chosen] = weights[chosen] * (1 - epsilon * ((outcome - 3.92) / rho))   
+	weights[chosen] = weights[chosen] * (1 - epsilon * ((outcome - 3.5) / rho))   
 
 # Final weights
 means = [0]*N
