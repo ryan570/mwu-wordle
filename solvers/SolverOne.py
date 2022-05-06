@@ -5,7 +5,7 @@ from dictionary import match, words
 
 class SolverOne:
     """
-    Algorithm 1:
+    Strategy 1:
     Starting word: none
 
     Random starting word, good for a baseline of comparison for other algorithms. 
@@ -13,14 +13,12 @@ class SolverOne:
     guesses: An array storing all guesses that have been made
     first_guesses: An array storing the starting guesses
     curr_guess: The current guess index
-    info: A dictionary storing all information the algorithm has gathered from the guesses; (key, value) => ("guess", [0, 1, 2, 1, 0])
     possible_guesses: A set of all possible remaining answers
     """
     def __init__(self):
         self.guesses = []
         self.first_guesses = []
         self.curr_guess = 0
-        self.info = {}
         self.possible_guesses = set(words)
 
     def guess(self):
@@ -44,5 +42,4 @@ class SolverOne:
         """Resets solver."""
         self.guesses.clear()
         self.curr_guess = 0
-        self.info.clear()
         self.possible_guesses = set(words)

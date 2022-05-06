@@ -2,8 +2,8 @@ import csv
 
 from dictionary import words
 from solvers.SolverOne import SolverOne
-from solvers.SolverThree import SolverThree
 from solvers.SolverTwo import SolverTwo
+from solvers.SolverThree import SolverThree
 from solvers.SolverFour import SolverFour
 from solvers.SolverFive import SolverFive
 from solvers.SolverFrequency import SolverFrequency

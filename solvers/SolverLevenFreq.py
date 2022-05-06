@@ -1,6 +1,3 @@
-import random
-from re import I
-
 from Levenshtein import distance
 
 from dictionary import match, words
@@ -8,23 +5,21 @@ from dictionary import match, words
 
 class SolverLevenFreq:
     """
-    Algorithm 1:
+    Strategy 8:
     Starting word: crane
     
-    Go through the list of possible valid words and choose the word with the greatest Levenshtein Distance to the previous guess.
-    
+    Go through the list of possible valid words and choose the word with the greatest Levenshtein Distance to the previous guess. On a tie,
+    use the Word Frequency algorithm (Strategy 6).
 
     guesses: An array storing all guesses that have been made
     first_guesses: An array storing the starting guesses
     curr_guess: The current guess index
-    info: A dictionary storing all information the algorithm has gathered from the guesses; (key, value) => ("guess", [0, 1, 2, 1, 0])
     possible_guesses: A set of all possible remaining answers
     """
     def __init__(self):
         self.guesses = []
         self.first_guesses = ["crane"]
         self.curr_guess = 0
-        self.info = {}
         self.possible_guesses = set(words)
 
     def guess(self):
@@ -42,7 +37,7 @@ class SolverLevenFreq:
         best_word = possible[0]
         best_word_distance = self.distance_to_all(best_word,self.guesses)
 
-        #Go through each word and pick the word with the greatest distance to the previous guess
+        # Go through each word and pick the word with the greatest distance to the previous guess
         good_words = [best_word]
 
         for word in possible:
@@ -56,8 +51,6 @@ class SolverLevenFreq:
             self.guesses.append(best_word)
             return self.guesses[-1]
 
-   
-        
         freq = {i : str(self.possible_guesses).count(i) for i in str(self.possible_guesses)}
         optimal_guess = ''
         optimal_guess_sum = 0
@@ -69,14 +62,9 @@ class SolverLevenFreq:
                 optimal_guess = word
                 optimal_guess_sum = sum
 
-        
         self.guesses.append(optimal_guess)
         return self.guesses[-1]
 
-
-
-        
-        
     def inform(self, feedback):
         """Cuts down on possible_guesses."""
         self.possible_guesses &= match(feedback, self.guesses[-1])
@@ -85,12 +73,12 @@ class SolverLevenFreq:
         """Resets solver."""
         self.guesses.clear()
         self.curr_guess = 0
-        self.info.clear()
         self.possible_guesses = set(words)
 
-    def distance_to_all(self,word,guesses):
+    def distance_to_all(self, word, guesses):
+        """Calculates Levenshtein Distance from the current word to all previous guesses."""
         total = 0
         for guess in guesses:
-            total+=distance(word,guess)
+            total += distance(word, guess)
         return total
 
